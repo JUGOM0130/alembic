@@ -33,3 +33,4 @@ pip install slqalchemy alembic pymysql
 * [これだBaseClass](https://qiita.com/penpenta/items/bd2940946324dedbd543)
 * [型](https://zenn.dev/re24_1986/articles/8520ac3f9a0187)
 * [currentTimestamp](https://qiita.com/arkuchy/items/8ae90e4a73ef30dc4749)
+* [外部キー・ユニーク制約](https://qiita.com/petitviolet/items/e03c67794c4e335b6706)
