@@ -4,6 +4,8 @@ DBの設定を行うファイル
 '''
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base,declared_attr
+from sqlalchemy.sql.functions import current_timestamp
+from sqlalchemy.sql.expression import text
 
 
 from sqlalchemy import Column,DateTime
@@ -22,10 +24,10 @@ Engine = create_engine(
 class Base(object):
     @declared_attr
     def created_at(cls):
-        return Column(DateTime, default=datetime.now(), nullable=False)
+        return Column(DateTime, default=datetime.now(), nullable=False,server_default=current_timestamp())
 
     @declared_attr
     def updated_at(cls):
-        return Column(DateTime, default=datetime.now(), nullable=False, onupdate=datetime.now())
+        return Column(DateTime, default=datetime.now(), nullable=False, server_default=text('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'))
 
 BaseModel = declarative_base(cls=Base)

@@ -30,3 +30,5 @@ pip install slqalchemy alembic pymysql
 * [Alembic で create table する migration ファイルを auto gen する際にカラムの順番を調整する](https://qiita.com/nassy20/items/39b07e66b014fa5d9bb3)
 * [BaseClass](https://blog.kumano-te.com/activities/sqlalchemy-tips)
 * [これだBaseClass](https://qiita.com/penpenta/items/bd2940946324dedbd543)
+* [型](https://zenn.dev/re24_1986/articles/8520ac3f9a0187)
+* [currentTimestamp](https://qiita.com/arkuchy/items/8ae90e4a73ef30dc4749)
