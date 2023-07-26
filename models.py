@@ -36,3 +36,27 @@ class MCodeTemplate(BaseModel):
             self.cthead,
             self.ctenumber
         )
+class MPart(BaseModel):
+    __tablename__ = 'm_parts'
+    pid=Column(Integer,primary_key=True,autoincrement=True,comment="パーツID")
+    pcid=Column(Integer,nullable=False,comment="")
+    pcd=Column(VARCHAR(45),nullable=False,comment="")
+    pname=Column(VARCHAR(45),nullable=False,comment="")
+    ppname=Column(VARCHAR(45),nullable=False,comment="")
+    prevision= Column(VARCHAR(45),nullable=False,comment="")
+    pvendor= Column(VARCHAR(45),nullable=False,comment="")
+    ptype= Column(VARCHAR(45),nullable=False,comment="")
+    pmaterial= Column(VARCHAR(45),nullable=False,comment="")
+    pio= Column(VARCHAR(45),nullable=False,comment="")
+    pmtlmain_cost= Column(VARCHAR(45),nullable=False,comment="")
+    pmtlsub_cost= Column(VARCHAR(45),nullable=False,comment="")
+    pprocdict_cost= Column(VARCHAR(45),nullable=False,comment="")
+    pprocsub_cost= Column(VARCHAR(45),nullable=False,comment="")
+
+
+    def __repr__(self):
+        return "<m_code_template('ctid={}','ctkind={}','cthead={}','ctenumber={}')>".format(
+            self.ctid,
+            self.ctkind,
+            self.cthead,
+            self.ctenumber
