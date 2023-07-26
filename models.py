@@ -48,14 +48,14 @@ class MPart(BaseModel):
     pid = Column(Integer, primary_key=True,
                  autoincrement=True, comment="パーツID")
     pcid = Column(Integer, nullable=False, comment="cidの外部キー")  # FK
-    pcd = Column(VARCHAR(45), nullable=False, comment="パーツコード")
-    pname = Column(VARCHAR(45), nullable=False, comment="パーツ名")
-    ppname = Column(VARCHAR(45), nullable=False, comment="パーツ一般名")
-    prevision = Column(VARCHAR(45), nullable=False, comment="リビジョン")
-    pvendor = Column(VARCHAR(45), nullable=False, comment="取引先コード")  # FK
-    ptype = Column(VARCHAR(45), nullable=False, comment="型式")
-    pmaterial = Column(VARCHAR(45), nullable=False, comment="材料名")
-    pio = Column(VARCHAR(45), nullable=False, comment="内外策")
+    pcd = Column(VARCHAR(256), nullable=False, comment="パーツコード")
+    pname = Column(VARCHAR(256), nullable=False, comment="パーツ名")
+    ppname = Column(VARCHAR(256), nullable=False, comment="パーツ一般名")
+    prevision = Column(VARCHAR(256), nullable=False, comment="リビジョン")
+    pvendor = Column(VARCHAR(256), nullable=False, comment="取引先コード")  # FK
+    ptype = Column(VARCHAR(256), nullable=False, comment="型式")
+    pmaterial = Column(VARCHAR(256), nullable=False, comment="材料名")
+    pio = Column(VARCHAR(256), nullable=False, comment="内外策")
     pstatus = Column(Integer, nullable=False, comment="ステータス")
     pmtlmain_cost = Column(Integer, nullable=False, comment="主要材料コスト")
     pmtlsub_cost = Column(Integer, nullable=False, comment="補助材料コスト")
@@ -85,10 +85,10 @@ class MStaff(BaseModel):
     __tablename__ = 'm_staff'
     scode = Column(Integer, primary_key=True,
                    autoincrement=True, comment="社員番号")
-    sname1 = Column(VARCHAR(100), nullable=False, comment="氏")
-    sname2 = Column(VARCHAR(100), nullable=False, comment="字")
-    sname3 = Column(VARCHAR(100), nullable=False, comment="氏（カナ）")
-    sname4 = Column(VARCHAR(100), nullable=False, comment="字（カナ）")
+    sname1 = Column(VARCHAR(256), nullable=False, comment="氏")
+    sname2 = Column(VARCHAR(256), nullable=False, comment="字")
+    sname3 = Column(VARCHAR(256), nullable=False, comment="氏（カナ）")
+    sname4 = Column(VARCHAR(256), nullable=False, comment="字（カナ）")
 
     def __repr__(self):
         return "<m_staff('scode={}','sname1={}','sname2={}','sname3={}','sname4={}')>".format(
@@ -104,14 +104,14 @@ class MTori(BaseModel):
     __tablename__ = 'm_tori'
     tid = Column(Integer, primary_key=True,
                  autoincrement=True, comment="取引先ID")
-    tname1 = Column(VARCHAR(100), nullable=False, comment="取引先名")
-    tname2 = Column(VARCHAR(100), nullable=False, comment="取引先名（カナ）")
-    zipcode = Column(VARCHAR(10), nullable=False, comment="住所")
-    address1 = Column(VARCHAR(100), nullable=False, comment="県")
-    address2 = Column(VARCHAR(100), nullable=False, comment="市区町村")
-    address3 = Column(VARCHAR(100), nullable=False, comment="番地")
-    address4 = Column(VARCHAR(100), nullable=False, comment="アパート・ビル名")
-    tel1 = Column(VARCHAR(20), nullable=False, comment="電話番号")
+    tname1 = Column(VARCHAR(256), nullable=False, comment="取引先名")
+    tname2 = Column(VARCHAR(256), nullable=False, comment="取引先名（カナ）")
+    zipcode = Column(VARCHAR(64), nullable=False, comment="住所")
+    address1 = Column(VARCHAR(256), nullable=False, comment="県")
+    address2 = Column(VARCHAR(256), nullable=False, comment="市区町村")
+    address3 = Column(VARCHAR(256), nullable=False, comment="番地")
+    address4 = Column(VARCHAR(256), nullable=False, comment="アパート・ビル名")
+    tel1 = Column(VARCHAR(64), nullable=False, comment="電話番号")
 
     def __repr__(self):
         return "<m_tori('tid={}','tname1={}','tname2={}','zipcode={}','address1={}','address2={}','address3={}','address4={}','tel1={}')>".format(
@@ -129,13 +129,13 @@ class MTori(BaseModel):
 
 class TTTable(BaseModel):
     __tablename__ = 't_tree_table'
-    tree_id = Column(VARCHAR(100), primary_key=True,
+    tree_id = Column(VARCHAR(256), primary_key=True,
                      nullable=False, comment="ツリーID")  # FK
 
-    composition_id = Column(VARCHAR(100), nullable=False, comment="構成ID")
-    parts_id = Column(VARCHAR(100), nullable=False, comment="字")
-    lv = Column(VARCHAR(100), nullable=False, comment="氏（カナ）")
-    parent_id = Column(VARCHAR(100), nullable=False, comment="字（カナ）")
+    composition_id = Column(VARCHAR(256), nullable=False, comment="構成ID")
+    parts_id = Column(VARCHAR(256), nullable=False, comment="字")
+    lv = Column(VARCHAR(256), nullable=False, comment="氏（カナ）")
+    parent_id = Column(VARCHAR(256), nullable=False, comment="字（カナ）")
     order = Column(Integer,nullable=False,comment="並び順")
     insu =Column(Integer,nullable=False,comment="員数")
     bosu =Column(Integer,nullable=False,comment="母数")
