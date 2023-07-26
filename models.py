@@ -114,12 +114,16 @@ class MTori(BaseModel):
     tel1 = Column(VARCHAR(20), nullable=False, comment="電話番号")
 
     def __repr__(self):
-        return "<m_staff('scode={}','sname1={}','sname2={}','sname3={}','sname4={}')>".format(
-            self.scode,
-            self.sname1,
-            self.sname2,
-            self.sname3,
-            self.sname4
+        return "<m_tori('tid={}','tname1={}','tname2={}','zipcode={}','address1={}','address2={}','address3={}','address4={}','tel1={}')>".format(
+            self.tid,
+            self.tname1,
+            self.tname2,
+            self.zipcode,
+            self.address1,
+            self.address2,
+            self.address3,
+            self.address4,
+            self.tel1
         )
 
 
@@ -132,15 +136,18 @@ class TTTable(BaseModel):
     parts_id = Column(VARCHAR(100), nullable=False, comment="字")
     lv = Column(VARCHAR(100), nullable=False, comment="氏（カナ）")
     parent_id = Column(VARCHAR(100), nullable=False, comment="字（カナ）")
-    order =
-    insu =
-    bosu =
+    order = Column(Integer,nullable=False,comment="並び順")
+    insu =Column(Integer,nullable=False,comment="員数")
+    bosu =Column(Integer,nullable=False,comment="母数")
 
     def __repr__(self):
-        return "<m_staff('scode={}','sname1={}','sname2={}','sname3={}','sname4={}')>".format(
-            self.scode,
-            self.sname1,
-            self.sname2,
-            self.sname3,
-            self.sname4
+        return "<t_tree_table('tree_id={}','composition_id={}','parts_id={}','lv={}','parent_id={}','order={}','insu={}','bosu={}')>".format(
+            self.tree_id,
+            self.composition_id,
+            self.parts_id,
+            self.lv,
+            self.parent_id,
+            self.order,
+            self.insu,
+            self.bosu
         )
