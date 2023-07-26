@@ -28,3 +28,5 @@ pip install slqalchemy alembic pymysql
 ## カラムの型など
 * [Link](https://zenn.dev/shimakaze_soft/articles/6e5e47851459f5)
 * [Alembic で create table する migration ファイルを auto gen する際にカラムの順番を調整する](https://qiita.com/nassy20/items/39b07e66b014fa5d9bb3)
+* [BaseClass](https://blog.kumano-te.com/activities/sqlalchemy-tips)
+* [これだBaseClass](https://qiita.com/penpenta/items/bd2940946324dedbd543)

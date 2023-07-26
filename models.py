@@ -1,51 +1,25 @@
-from sqlalchemy import Column, Integer, String
+from datetime import datetime
+from sqlalchemy import Column, Integer, String,DateTime
 
 # 自作モジュールの読み込み
-from settings import Base
+from settings import BaseModel
 
-class User(Base):
-    __tablename__ = 'users'
-
-    id = Column(Integer, primary_key=True)
-    name = Column(String)
-    fullname = Column(String)
-    nickname = Column(String)
-
-    def __repr__(self):
-        return "<User('name={}', fullname={}, nickname={})>".format(
-            self.name,
-            self.fullname,
-            self.nickname
-        )
+class m_code(BaseModel):
+    __tablename__ = 'm_code'
     
-class Fruit(Base):
-    __tablename__ = 'fruits'
-
-    id = Column(Integer, primary_key=True)
-    name = Column(String)
-    fullname = Column(String)
-    price = Column(Integer)
-
-    def __repr__(self):
-        return "<User('name={}', fullname={}, price={})>".format(
-            self.name,
-            self.fullname,
-            self.price
-        )
+    cid = Column(Integer, primary_key=True,autoincrement=True)
+    ckind = Column(Integer,nullable=False)
+    chead = Column(String(10),nullable=False)
+    cenumber = Column(String(5),nullable=False)
+    cnumber = Column(Integer,nullable=False)
+    cfoot = Column(String(10),nullable=False)
     
-
-class Parts2(Base):
-    __tablename__ = 'parts'
-
-    id = Column(Integer, primary_key=True)
-    pname = Column(String)
-    fullname = Column(String)
-    price = Column(Integer)
-
     def __repr__(self):
-        return "<User('pname={}', fullname={}, price={})>".format(
-            self.pname,
-            self.fullname,
-            self.price
+        return "<m_code('cid={}', ckind={}, chead={}, cenumber={}, cnumber={}, cfoot={})>".format(
+            self.cid,
+            self.ckind,
+            self.chead,
+            self.cenumber,
+            self.cnumber,
+            self.cfoot
         )
-    
