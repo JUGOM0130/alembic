@@ -24,3 +24,7 @@ pip install slqalchemy alembic pymysql
 * ロールバック
   * ```alembic downgrade ID``` 指定のIDまで戻す
   * ```alembic downgrade base``` 最初に戻す
+
+## カラムの型など
+* [Link](https://zenn.dev/shimakaze_soft/articles/6e5e47851459f5)
+* [Alembic で create table する migration ファイルを auto gen する際にカラムの順番を調整する](https://qiita.com/nassy20/items/39b07e66b014fa5d9bb3)
